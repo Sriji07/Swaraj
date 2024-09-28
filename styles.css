@@ -4,7 +4,7 @@ body {
     background-color: #f7f7f7;
     margin: 0;
     padding: 0;
-    background-image: url('india2.jpg');
+    background-image: url('/assets/india2.jpg');
     /* Set a background image for all pages */
     background-size: cover;
     background-attachment: fixed;
