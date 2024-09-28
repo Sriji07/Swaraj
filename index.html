@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Voter Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Welcome to the E-Voting System</h1>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="registration.html">Register</a></li>
+            <li><a href="voting.html">Vote</a></li>
+            <li><a href="admin.html">Admin Verification</a></li>
+            <li><a href="result.html">View Results</a></li>
+        </ul>
+    </nav>
+
+    <h2>Voter Login</h2>
+    <form id="loginForm">
+        <label for="voterID">Voter ID:</label>
+        <input type="text" id="voterID" name="voterID" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            alert("Login successful! Redirecting to the voting page...");
+            window.location.href = "voting.html"; // Redirect to voting page after login
+        });
+    </script>
+</body>
+
+</html>

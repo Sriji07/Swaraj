@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Verification</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="registration.html">Register</a></li>
+            <li><a href="voting.html">Vote</a></li>
+            <li><a href="admin.html">Admin Verification</a></li>
+            <li><a href="result.html">View Results</a></li>
+        </ul>
+    </nav>
+
+    <h1>Admin - Verify and Tally Votes</h1>
+
+    <h2>Candidate Information</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Candidate ID</th>
+                <th>Candidate Name</th>
+                <th>Votes</th>
+            </tr>
+        </thead>
+        <tbody id="voterData">
+            <!-- This table will display the candidate data -->
+        </tbody>
+    </table>
+
+    <button onclick="publishResults()">Publish Results</button>
+
+    <script>
+        // Example candidate data (you can replace this with server-side data fetching)
+        const candidateData = [
+            { candidateID: 'TMC', name: 'Mamata Banerjee', votes: 200 },
+            { candidateID: 'BJP', name: 'Suvendu Adhikari', votes: 160 },
+            { candidateID: 'CPIM', name: 'Surjya Kanta Mishra', votes: 50 },
+            { candidateID: 'INC', name: 'Rahul Gandhi', votes: 90 }
+        ];
+
+        // Function to load candidate data into the table
+        function loadCandidateData() {
+            const tableBody = document.getElementById("voterData");
+            candidateData.forEach(candidate => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${candidate.candidateID}</td>
+                    <td>${candidate.name}</td>
+                    <td>${candidate.votes}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Call this function to load candidate data when the page loads
+        window.onload = loadCandidateData;
+
+        // Function to publish results and redirect to the result page
+        function publishResults() {
+            // Prepare the results for localStorage
+            const results = prepareResults();
+
+            // Save the results to localStorage (this simulates publishing)
+            localStorage.setItem('electionResults', JSON.stringify(results));
+
+            // Redirect to the result page
+            alert("Results published successfully!");
+            window.location.href = "result.html";
+        }
+
+        // Function to prepare results for storage
+        function prepareResults() {
+            const results = {};
+            candidateData.forEach(candidate => {
+                results[candidate.name] = candidate.votes; // Store candidate name and votes
+            });
+            return results;
+        }
+    </script>
+</body>
+
+</html>

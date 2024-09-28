@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="registration.html">Register</a></li>
+            <li><a href="voting.html">Vote</a></li>
+            <li><a href="admin.html">Admin Verification</a></li>
+            <li><a href="result.html">View Results</a></li>
+        </ul>
+    </nav>
+
+    <h1>Cast Your Vote</h1>
+    <form id="voteForm">
+        <label for="candidate">Choose a candidate:</label>
+        <select id="candidate" name="candidate">
+            <option value="candidate1">BJP</option>
+            <option value="candidate2">CPIM</option>
+            <option value="candidate3">TMC</option>
+            <option value="candidate3">INC</option>
+
+        </select><br><br>
+
+        <label for="voterID">Voter ID:</label>
+        <input type="text" id="voterID" name="voterID" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <button type="submit">Submit Vote</button>
+    </form>
+</body>
+
+</html>

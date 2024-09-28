@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Results</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="registration.html">Register</a></li>
+            <li><a href="voting.html">Vote</a></li>
+            <li><a href="admin.html">Admin Verification</a></li>
+            <li><a href="result.html">View Results</a></li>
+        </ul>
+    </nav>
+
+    <h1>Election Results</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Candidate</th>
+                <th>Votes</th>
+            </tr>
+        </thead>
+        <tbody id="resultsTable">
+            <!-- Results will be dynamically loaded here -->
+        </tbody>
+    </table>
+
+    <script>
+        // Function to load results from localStorage and display them
+        function loadResults() {
+            const results = JSON.parse(localStorage.getItem('electionResults'));
+
+            const resultsTable = document.getElementById("resultsTable");
+            if (results) {
+                for (const [candidate, voteCount] of Object.entries(results)) {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${candidate}</td>
+                        <td>${voteCount}</td>
+                    `;
+                    resultsTable.appendChild(row);
+                }
+            } else {
+                // If there are no results, display a message
+                const row = document.createElement("tr");
+                row.innerHTML = `<td colspan="2">No results available</td>`;
+                resultsTable.appendChild(row);
+            }
+        }
+
+        // Call the function to load results when the page loads
+        window.onload = loadResults;
+    </script>
+</body>
+
+</html>
