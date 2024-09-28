@@ -100,7 +100,7 @@ select {
 }
 
 button {
-    width: 90%;
+    width: 30%;
     /* Button takes up 90% of the container's width */
     padding: 10px;
     background-color: #1c74bc;
@@ -125,7 +125,7 @@ button:hover {
 
 /* Table Styling */
 table {
-    width: 90%;
+    width: 60%;
     border-collapse: collapse;
     margin: 20px auto;
     /* Center the table horizontally with 'auto' */
