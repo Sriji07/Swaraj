@@ -178,17 +178,55 @@ footer {
 
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
+    nav ul li {
+        display: block;
+        /* Stack the navigation links vertically */
+        margin: 10px 0;
+        /* Add margin for spacing */
     }
 
-    form {
-        max-width: 100%;
+    h1 {
+        font-size: 1.8rem;
+        /* Adjust heading size */
     }
 
-    table,
+    button {
+        font-size: 0.9rem;
+        /* Smaller button text */
+    }
+
+    table {
+        width: 95%;
+        /* Slightly wider on mobile */
+    }
+
     th,
     td {
-        font-size: 0.9rem;
+        padding: 10px;
+        /* Reduce padding in table cells */
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li a {
+        font-size: 1rem;
+        /* Further reduce font size */
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        /* Smaller heading size */
+    }
+
+    button {
+        padding: 8px;
+        /* Smaller button padding */
+        font-size: 0.8rem;
+        /* Even smaller button text */
+    }
+
+    table {
+        width: 100%;
+        /* Full width for mobile */
     }
 }
